@@ -1,0 +1,9 @@
+.displaybox {
+  border: 1px;
+  border-style: solid;
+  border-color: red;
+}
+
+select {
+  margin: 5px;
+}

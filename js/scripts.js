@@ -52,3 +52,14 @@ Order.prototype.totalUp = function() {
   });
   this.grandTotal = subTotal;
 }
+
+$(document).ready(function() {
+
+  $('form#pizzaPicker').submit(function(event) {
+    event.preventDefault();
+    var pick = $('select#pizzaType').val();
+    console.log(pick);
+  });
+
+
+}); //END DOCUMENT READY FUNCTION

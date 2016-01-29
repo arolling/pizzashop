@@ -5,7 +5,7 @@
   d) List of added extras
 2) Create an order object that contains: --> once 1) is complete and tested!
   a) The list of pizzas objects for this order
-  b) Order modifications (extra toppings) and their prices?
+  b) Potential order modifications (extra toppings) and their prices?
   c) Total price of order
 **3) Prototype method selects the cost of the size of pizza and
   b) second prototype method adds the cost of toppings to create total cost
@@ -14,7 +14,10 @@
 6) Further exploration priorities:
   a) User can order more than one pizza (see 2 above)
   b) Add ability to change order after pizza object constructed (new methods)
+  c) Checkboxes for add-ons
   c) Delivery option with additional cost
   d) List of pizzas as links with details
 7) Treat all money values as number of cents and divide by 100 before user display
 **8) Create a method to return a friendly description of the pizza
+9) Change the size price customer (dropdown) display depending on what type of pizza they select
+10) Hide/show next selection box? do this without a submit button?
