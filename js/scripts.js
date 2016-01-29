@@ -15,6 +15,11 @@ Pizza.prototype.setSize = function(size){
   } else if (this.pieSize === "Large"){
     this.total += this.basePrices[2];
   } else {
-    alert("Not a valid size");
+    alert("Not a valid size"); // this should NEVER occur, but good for testing
   }
+}
+
+Pizza.prototype.addExtra = function(extra, cost){
+  this.extras.push(extra);
+  this.total += cost;
 }

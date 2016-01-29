@@ -13,6 +13,7 @@
 5) Q: Create set of standard pizza objects at beginning of jQuery or initiate them as customer selects them from a drop down menu????
 6) Further exploration priorities:
   a) User can order more than one pizza (see 2 above)
-  b) Delivery option with additional cost
-  c) List of pizzas as links with details
+  b) Add ability to change order after pizza object constructed (new methods)
+  c) Delivery option with additional cost
+  d) List of pizzas as links with details
 7) Treat all money values as number of cents and divide by 100 before user display
