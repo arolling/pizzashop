@@ -99,7 +99,10 @@ $(document).ready(function() {
 
   $('#addPizza').click(function() {
     // Add span to contain next pizza?
-
+    $('#pizzaList' + counter).after('<span id="pizzaList' + (counter+1) + '"></span>');
+    $('#priceList' + counter).after('<span id="priceList' + (counter+1) + '"></span>');
+    counter++;
+    $('#extrasPicker').hide();
   });
 
   $('#confirmation').click(function(){
