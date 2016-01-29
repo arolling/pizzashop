@@ -90,12 +90,29 @@
           <div id="orderTotal">
             <h4>With 7.5% tax, your order total is:</h4>
             <p class="bg-success" id="totalWithTax"></p>
-            <button type="button" class="btn btn-primary btn-lg" id="confirmation">Confirm Order</button>
+            <button type="button" class="btn btn-primary btn-lg" id="confirmation" data-toggle="modal" data-target="#confirmationModal">Confirm Order</button>
           </div>
-
-
         </div><!-- End right column -->
       </div><!-- End main row of columns -->
+      <div class="modal fade" tabindex="-1" role="dialog" id="confirmationModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 class="modal-title">Order Confirmation</h3>
+            </div>
+            <div class="modal-body">
+              <span id="displayConfirmation"></span>
+              <p><strong>Your grand total with tax is <span id="displayGrandTotal"></span></strong></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+
     </div> <!-- End main body container -->
   </body>
 </html>

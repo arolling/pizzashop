@@ -106,10 +106,14 @@ $(document).ready(function() {
   });
 
   $('#confirmation').click(function(){
-    // MUST FIX THIS FOR EACH PIZZA IN ORDER!
-    alert('Your total for a ' + userPizza.describePizza() + ' is $' + taxedTotal(userPizza.total));
-    window.location.reload();
+    userOrder.pizzas.forEach(function(pizza) {
+      $('#displayConfirmation').append('<p>' + pizza.describePizza() + ' is ' + pizza.currentCost() + '</p>');
+    });
+    $('#displayGrandTotal').text('$' + taxedTotal(userOrder.grandTotal));
   });
 
+  $('#confirmationModal').on('hidden.bs.modal', function () {
+    location.reload();
+  });
 
 }); //END DOCUMENT READY FUNCTION

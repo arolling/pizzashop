@@ -14,6 +14,7 @@ This pizza ordering website allows the user to pick from a list of types of pizz
 * User can add the same topping more than once
 * Does not show the individual prices for each extra
 * All pizzas are the same price
+* Grammar when "Gluten Free" is chosen can be wonky
 
 ## Support and contact details
 
