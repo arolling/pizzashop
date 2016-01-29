@@ -37,7 +37,7 @@ Pizza.prototype.describePizza = function(){
 }
 
 Pizza.prototype.currentCost = function() {
-  return '$' + this.total / 100;
+  return '$' + (this.total / 100).toFixed(2);
 }
 
 function Order(customer){
@@ -76,8 +76,10 @@ $(document).ready(function() {
 
   $('form#extrasPicker').submit(function(event) {
     event.preventDefault();
-    var extra = $('input:checkbox:checked').val();
-    userPizza.addExtra(extra);
+    var extra = $('input:checkbox:checked').attr('id');
+    var extraCost = parseInt($('input:checkbox:checked').val());
+    console.log(extra, extraCost);
+    userPizza.addExtra(extra, extraCost);
     console.log(userPizza);
     $('#pizzaList').append('<li class="list-group-item">' + userPizza.describePizza() + '</li>');
     $('#priceList').append('<li class="list-group-item">' + userPizza.currentCost() + '</li>');
