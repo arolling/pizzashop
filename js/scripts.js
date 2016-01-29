@@ -64,6 +64,7 @@ $(document).ready(function() {
     $('#pizzaList').append('<li class="list-group-item">' + userPizza.describePizza() + '</li>');
     $('#priceList').append('<li class="list-group-item">' + userPizza.currentCost() + '</li>');
   });
+
   $('form#sizePicker').submit(function(event) {
     event.preventDefault();
     var size = $('select#pizzaSize').val();
@@ -72,6 +73,16 @@ $(document).ready(function() {
     $('#pizzaList').append('<li class="list-group-item">' + userPizza.describePizza() + '</li>');
     $('#priceList').append('<li class="list-group-item">' + userPizza.currentCost() + '</li>');
   });
+
+  $('form#extrasPicker').submit(function(event) {
+    event.preventDefault();
+    var extra = $('input:checkbox:checked').val();
+    userPizza.addExtra(extra);
+    console.log(userPizza);
+    $('#pizzaList').append('<li class="list-group-item">' + userPizza.describePizza() + '</li>');
+    $('#priceList').append('<li class="list-group-item">' + userPizza.currentCost() + '</li>');
+  });
+
 
 
 }); //END DOCUMENT READY FUNCTION

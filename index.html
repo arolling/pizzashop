@@ -39,12 +39,30 @@
           </form>
           <form class="form-inline" id="sizePicker">
             <div class="form-group">
-              <label for="pizzaType">Choose A Size:</label>
+              <label for="pizzaSize">Choose A Size:</label>
               <select required class="form-control" id="pizzaSize">
                 <option value="Small">Small</option>
                 <option value="Medium">Medium</option>
                 <option selected value="Large">Large</option>
               </select>
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+          <form class="form-inline" id="extrasPicker">
+            <div class="form-group">
+              <label>Pick Your Extras:</label>
+              <label class="checkbox-inline">
+                <input type="checkbox" value="Extra Cheese">
+                Extra Cheese
+              </label>
+              <label class="checkbox-inline">
+                <input type="checkbox" value="Sausage">
+                Sausage
+              </label>
+              <label class="checkbox-inline">
+                <input type="checkbox" value="Gluten Free">
+                Gluten Free
+              </label>
             </div>
             <button type="submit" class="btn btn-default">Submit</button>
           </form>
