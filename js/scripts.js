@@ -8,6 +8,7 @@ function Pizza(kind, basePrices){
 
 Pizza.prototype.setSize = function(size){
   this.pieSize = size;
+  this.total = 0;
   if (this.pieSize === "Small"){
     this.total += this.basePrices[0];
   } else if (this.pieSize === "Medium"){
@@ -58,8 +59,15 @@ $(document).ready(function() {
   $('form#pizzaPicker').submit(function(event) {
     event.preventDefault();
     var pick = $('select#pizzaType').val();
-    console.log(pick);
     userPizza = new Pizza(pick, [500, 1000, 1500]);
+    console.log(userPizza);
+    $('#pizzaList').append('<li class="list-group-item">' + userPizza.describePizza() + '</li>');
+    $('#priceList').append('<li class="list-group-item">' + userPizza.currentCost() + '</li>');
+  });
+  $('form#sizePicker').submit(function(event) {
+    event.preventDefault();
+    var size = $('select#pizzaSize').val();
+    userPizza.setSize(size);
     console.log(userPizza);
     $('#pizzaList').append('<li class="list-group-item">' + userPizza.describePizza() + '</li>');
     $('#priceList').append('<li class="list-group-item">' + userPizza.currentCost() + '</li>');

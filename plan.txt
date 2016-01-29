@@ -21,3 +21,4 @@
 **8) Create a method to return a friendly description of the pizza
 9) Change the size price customer (dropdown) display depending on what type of pizza they select
 10) Hide/show next selection box? do this without a submit button?
+FIXED&&& BUG: When a user selects a size and submits, then selects another size the two prices add
