@@ -76,18 +76,25 @@
           <h3>Current Order:</h3>
           <div class="row">
             <div class="col-sm-9">
-              <ul class="list-group" id="pizzaList">
+              <ul class="list-group" >
                 <li class="list-group-item"><strong>Pizza:</strong></li>
-
+                <span id="pizzaList"></span>
               </ul>
+              <button type="button" class="btn btn-default" id="addPizza">Add Another Pizza</button>
             </div>
             <div class="col-sm-3">
-              <ul class="list-group" id="priceList">
+              <ul class="list-group">
                 <li class="list-group-item"><strong>Price:</strong></li>
-
+                <span id="priceList"></span>
               </ul>
             </div>
+          </div><!-- End order specifics -->
+          <div id="orderTotal">
+            <h4>With 7.5% tax, your order total is:</h4>
+            <p class="bg-success" id="totalWithTax"></p>
+            <button type="button" class="btn btn-primary btn-lg" id="confirmation">Confirm Order</button>
           </div>
+
 
         </div><!-- End right column -->
       </div><!-- End main row of columns -->

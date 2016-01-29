@@ -61,8 +61,8 @@ $(document).ready(function() {
     var pick = $('select#pizzaType').val();
     userPizza = new Pizza(pick, [500, 1000, 1500]);
     console.log(userPizza);
-    $('#pizzaList').append('<li class="list-group-item">' + userPizza.describePizza() + '</li>');
-    $('#priceList').append('<li class="list-group-item">' + userPizza.currentCost() + '</li>');
+    $('#pizzaList').html('<li class="list-group-item">' + userPizza.describePizza() + '</li>');
+    //$('#priceList').html('<li class="list-group-item">' + userPizza.currentCost() + '</li>');
   });
 
   $('form#sizePicker').submit(function(event) {
@@ -70,8 +70,9 @@ $(document).ready(function() {
     var size = $('select#pizzaSize').val();
     userPizza.setSize(size);
     console.log(userPizza);
-    $('#pizzaList').append('<li class="list-group-item">' + userPizza.describePizza() + '</li>');
-    $('#priceList').append('<li class="list-group-item">' + userPizza.currentCost() + '</li>');
+    $('#pizzaList').html('<li class="list-group-item">' + userPizza.describePizza() + '</li>');
+    $('#priceList').html('<li class="list-group-item">' + userPizza.currentCost() + '</li>');
+    $('#totalWithTax').text('$' + ((userPizza.total * 1.075) / 100).toFixed(2))
   });
 
   $('form#extrasPicker').submit(function(event) {
@@ -82,8 +83,9 @@ $(document).ready(function() {
       console.log(extra, extraCost);
       userPizza.addExtra(extra, extraCost);
       console.log(userPizza);
-      $('#pizzaList').append('<li class="list-group-item">' + userPizza.describePizza() + '</li>');
-      $('#priceList').append('<li class="list-group-item">' + userPizza.currentCost() + '</li>');
+      $('#pizzaList').html('<li class="list-group-item">' + userPizza.describePizza() + '</li>');
+      $('#priceList').html('<li class="list-group-item">' + userPizza.currentCost() + '</li>');
+      $('#totalWithTax').text('$' + ((userPizza.total * 1.075) / 100).toFixed(2))
     }); // pulls name and value from each checked item and adds it to Pizza object
     $('input:checkbox').removeAttr('checked'); //unchecks checkboxes
   });
