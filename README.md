@@ -13,6 +13,7 @@ This pizza ordering website allows the user to pick from a list of types of pizz
 * Does not allow the user to remove extras after adding them; clears extras if a new pizza is selected
 * User can add the same topping more than once
 * Does not show the individual prices for each extra
+* All pizzas are the same price
 
 ## Support and contact details
 

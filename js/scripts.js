@@ -50,8 +50,10 @@ Order.prototype.totalUp = function() {
   var subTotal = 0; // resets total in case customer has previously summed
   this.pizzas.forEach(function(pizza){
     subTotal += pizza.total;
+    console.log(subTotal);
   });
   this.grandTotal = subTotal;
+  console.log(this.grandTotal);
 }
 
 var taxedTotal = function(rawTotal){ //expects a number, not a whole object
@@ -59,7 +61,9 @@ var taxedTotal = function(rawTotal){ //expects a number, not a whole object
 }
 
 $(document).ready(function() {
+  var counter = 1;
   var userPizza;
+  var userOrder = new Order('Customer'); // name attribute is not actually being used;
   $('form#pizzaPicker').submit(function(event) {
     event.preventDefault();
     var pick = $('select#pizzaType').val();
@@ -68,9 +72,11 @@ $(document).ready(function() {
     var size = $('select#pizzaSize').val();
     userPizza.setSize(size);
     console.log(userPizza);
-    $('#pizzaList').html('<li class="list-group-item">' + userPizza.describePizza() + '</li>');
-    $('#priceList').html('<li class="list-group-item">' + userPizza.currentCost() + '</li>');
-    $('#totalWithTax').text('$' + ((userPizza.total * 1.075) / 100).toFixed(2))
+    userOrder.pizzas.push(userPizza);
+    userOrder.totalUp();
+    $('#pizzaList' + counter).html('<li class="list-group-item">' + userPizza.describePizza() + '</li>');
+    $('#priceList' + counter).html('<li class="list-group-item">' + userPizza.currentCost() + '</li>');
+    $('#totalWithTax').text('$' + taxedTotal(userOrder.grandTotal));
     $('#orderTotal').show();
     $('#extrasPicker').show();
   }); // Choose pizza and size
@@ -83,21 +89,24 @@ $(document).ready(function() {
       console.log(extra, extraCost);
       userPizza.addExtra(extra, extraCost);
       console.log(userPizza);
-      $('#pizzaList').html('<li class="list-group-item">' + userPizza.describePizza() + '</li>');
-      $('#priceList').html('<li class="list-group-item">' + userPizza.currentCost() + '</li>');
-      $('#totalWithTax').text('$' + taxedTotal(userPizza.total));
+      userOrder.totalUp();
+      $('#pizzaList' + counter).html('<li class="list-group-item">' + userPizza.describePizza() + '</li>');
+      $('#priceList' + counter).html('<li class="list-group-item">' + userPizza.currentCost() + '</li>');
+      $('#totalWithTax').text('$' + taxedTotal(userOrder.grandTotal));
     }); // pulls name and value from each checked item and adds it to Pizza object
     $('input:checkbox').removeAttr('checked'); //unchecks checkboxes
   }); //choose extras
 
+  $('#addPizza').click(function() {
+    // Add span to contain next pizza?
+
+  });
+
   $('#confirmation').click(function(){
+    // MUST FIX THIS FOR EACH PIZZA IN ORDER!
     alert('Your total for a ' + userPizza.describePizza() + ' is $' + taxedTotal(userPizza.total));
     window.location.reload();
   });
 
 
 }); //END DOCUMENT READY FUNCTION
-
-// $('.btn-refresh').click(function() {
-//     window.location.reload();
-//   }); // end of reload function
