@@ -20,9 +20,25 @@ describe ('Pizza', function (){
     var testPizza = new Pizza("Pepperoni", [599, 799, 999]);
     testPizza.setSize('Medium');
     testPizza.addExtra('Extra Cheese', 75);
-    testPizza.addExtra('Gluten Free', 450)
+    testPizza.addExtra('Gluten Free', 450);
     expect(testPizza.extras).to.eql(['Extra Cheese', 'Gluten Free']);
     expect(testPizza.total).to.equal(1324);
     console.log(testPizza);
+  });
+
+  it('will return a friendly description of the current state of the pizza', function() {
+    var testPizza = new Pizza("Pepperoni", [599, 799, 999]);
+    testPizza.setSize('Medium');
+    testPizza.addExtra('Extra Cheese', 75);
+    testPizza.addExtra('Gluten Free', 450);
+    expect(testPizza.describePizza()).to.equal('Medium Pepperoni Pizza with Extra Cheese and Gluten Free');
+  });
+
+  it('will return a friendly description of the current pizza cost', function() {
+    var testPizza = new Pizza("Pepperoni", [599, 799, 999]);
+    testPizza.setSize('Medium');
+    testPizza.addExtra('Extra Cheese', 75);
+    testPizza.addExtra('Gluten Free', 450);
+    expect(testPizza.currentCost()).to.equal('$13.24');
   });
 });

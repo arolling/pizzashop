@@ -7,7 +7,7 @@
   a) The list of pizzas objects for this order
   b) Order modifications (extra toppings) and their prices?
   c) Total price of order
-3) Prototype method selects the cost of the size of pizza and
+**3) Prototype method selects the cost of the size of pizza and
   b) second prototype method adds the cost of toppings to create total cost
 4) Prototype method adds cost of selected pizzas for total order price??
 5) Q: Create set of standard pizza objects at beginning of jQuery or initiate them as customer selects them from a drop down menu????
@@ -17,3 +17,4 @@
   c) Delivery option with additional cost
   d) List of pizzas as links with details
 7) Treat all money values as number of cents and divide by 100 before user display
+8) Create a method to return a friendly description of the pizza

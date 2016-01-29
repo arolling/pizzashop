@@ -23,3 +23,18 @@ Pizza.prototype.addExtra = function(extra, cost){
   this.extras.push(extra);
   this.total += cost;
 }
+
+Pizza.prototype.describePizza = function(){
+  var extraString = '';
+  var and = ''; // little crazy, but...
+  this.extras.forEach(function(extra) {
+    extraString += and;
+    extraString += extra;
+    and = ' and ';
+  });
+  return this.pieSize + ' ' + this.kind + ' Pizza with ' + extraString;
+}
+
+Pizza.prototype.currentCost = function() {
+  return '$' + this.total / 100;
+}
