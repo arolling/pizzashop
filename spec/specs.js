@@ -42,3 +42,12 @@ describe ('Pizza', function (){
     expect(testPizza.currentCost()).to.equal('$13.24');
   });
 });
+
+describe('Order', function() {
+  it('will create an object to contain an entire customer order', function(){
+    var testOrder = new Order('test order');
+    expect(testOrder.name).to.equal('test order');
+    expect(testOrder.pizzas).to.eql([]);
+    expect(testOrder.grandTotal).to.eql(0);
+  });
+});

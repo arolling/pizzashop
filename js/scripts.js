@@ -38,3 +38,9 @@ Pizza.prototype.describePizza = function(){
 Pizza.prototype.currentCost = function() {
   return '$' + this.total / 100;
 }
+
+function Order(customer){
+  this.name = customer;
+  this.pizzas = [];
+  this.grandTotal = 0;
+}

@@ -17,4 +17,4 @@
   c) Delivery option with additional cost
   d) List of pizzas as links with details
 7) Treat all money values as number of cents and divide by 100 before user display
-8) Create a method to return a friendly description of the pizza
+**8) Create a method to return a friendly description of the pizza
