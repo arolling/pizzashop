@@ -25,3 +25,11 @@ select {
   display: none;
   text-align: center;
 }
+
+#extrasPicker {
+  display: none;
+}
+
+.list-group-item {
+  height: 60px;
+}
