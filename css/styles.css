@@ -22,5 +22,6 @@ select {
 }
 
 #orderTotal {
+  display: none;
   text-align: center;
 }

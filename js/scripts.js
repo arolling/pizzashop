@@ -61,19 +61,20 @@ $(document).ready(function() {
     var pick = $('select#pizzaType').val();
     userPizza = new Pizza(pick, [500, 1000, 1500]);
     console.log(userPizza);
-    $('#pizzaList').html('<li class="list-group-item">' + userPizza.describePizza() + '</li>');
-    //$('#priceList').html('<li class="list-group-item">' + userPizza.currentCost() + '</li>');
-  });
-
-  $('form#sizePicker').submit(function(event) {
-    event.preventDefault();
+  //   $('#pizzaList').html('<li class="list-group-item">' + userPizza.describePizza() + '</li>');
+  //
+  // });
+  //
+  // $('form#sizePicker').submit(function(event) {
+  //   event.preventDefault();
     var size = $('select#pizzaSize').val();
     userPizza.setSize(size);
     console.log(userPizza);
     $('#pizzaList').html('<li class="list-group-item">' + userPizza.describePizza() + '</li>');
     $('#priceList').html('<li class="list-group-item">' + userPizza.currentCost() + '</li>');
     $('#totalWithTax').text('$' + ((userPizza.total * 1.075) / 100).toFixed(2))
-  });
+    $('#orderTotal').show();
+  }); // Choose pizza and size
 
   $('form#extrasPicker').submit(function(event) {
     event.preventDefault();
@@ -88,7 +89,7 @@ $(document).ready(function() {
       $('#totalWithTax').text('$' + ((userPizza.total * 1.075) / 100).toFixed(2))
     }); // pulls name and value from each checked item and adds it to Pizza object
     $('input:checkbox').removeAttr('checked'); //unchecks checkboxes
-  });
+  }); //choose extras
 
 
 
