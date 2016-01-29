@@ -26,13 +26,13 @@ Pizza.prototype.addExtra = function(extra, cost){
 
 Pizza.prototype.describePizza = function(){
   var extraString = '';
-  var and = ''; // little crazy, but...
+  var and = 'with '; // little crazy, but...
   this.extras.forEach(function(extra) {
     extraString += and;
     extraString += extra;
     and = ' and ';
   });
-  return this.pieSize + ' ' + this.kind + ' Pizza with ' + extraString;
+  return this.pieSize + ' ' + this.kind + ' Pizza ' + extraString;
 }
 
 Pizza.prototype.currentCost = function() {
@@ -54,11 +54,15 @@ Order.prototype.totalUp = function() {
 }
 
 $(document).ready(function() {
-
+  var userPizza;
   $('form#pizzaPicker').submit(function(event) {
     event.preventDefault();
     var pick = $('select#pizzaType').val();
     console.log(pick);
+    userPizza = new Pizza(pick, [500, 1000, 1500]);
+    console.log(userPizza);
+    $('#pizzaList').append('<li class="list-group-item">' + userPizza.describePizza() + '</li>');
+    $('#priceList').append('<li class="list-group-item">' + userPizza.currentCost() + '</li>');
   });
 
 
