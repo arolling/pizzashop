@@ -44,7 +44,7 @@ function Order(customer){
   this.name = customer;
   this.pizzas = [];
   this.grandTotal = 0;
-}
+}  // Object to contain multiple pizzas
 
 Order.prototype.totalUp = function() {
   var subTotal = 0; // resets total in case customer has previously summed
@@ -52,6 +52,10 @@ Order.prototype.totalUp = function() {
     subTotal += pizza.total;
   });
   this.grandTotal = subTotal;
+}
+
+var taxedTotal = function(rawTotal){ //expects a number, not a whole object
+  return ((rawTotal * 1.075) / 100).toFixed(2);
 }
 
 $(document).ready(function() {
@@ -86,11 +90,18 @@ $(document).ready(function() {
       console.log(userPizza);
       $('#pizzaList').html('<li class="list-group-item">' + userPizza.describePizza() + '</li>');
       $('#priceList').html('<li class="list-group-item">' + userPizza.currentCost() + '</li>');
-      $('#totalWithTax').text('$' + ((userPizza.total * 1.075) / 100).toFixed(2))
+      $('#totalWithTax').text('$' + taxedTotal(userPizza.total));
     }); // pulls name and value from each checked item and adds it to Pizza object
     $('input:checkbox').removeAttr('checked'); //unchecks checkboxes
   }); //choose extras
 
+  $('#confirmation').click(function(){
+    alert('Your total for a ' + userPizza.describePizza() + ' is $' + taxedTotal(userPizza.total));
+  });
 
 
 }); //END DOCUMENT READY FUNCTION
+
+// $('.btn-refresh').click(function() {
+//     window.location.reload();
+//   }); // end of reload function
