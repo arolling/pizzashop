@@ -44,3 +44,11 @@ function Order(customer){
   this.pizzas = [];
   this.grandTotal = 0;
 }
+
+Order.prototype.totalUp = function() {
+  var subTotal = 0; // resets total in case customer has previously summed
+  this.pizzas.forEach(function(pizza){
+    subTotal += pizza.total;
+  });
+  this.grandTotal = subTotal;
+}

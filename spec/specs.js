@@ -50,4 +50,31 @@ describe('Order', function() {
     expect(testOrder.pizzas).to.eql([]);
     expect(testOrder.grandTotal).to.eql(0);
   });
+
+  it('will add new pizzas to its list', function(){
+    var testPizza = new Pizza("Pepperoni", [599, 799, 999]);
+    testPizza.setSize('Medium');
+    testPizza.addExtra('Extra Cheese', 75);
+    testPizza.addExtra('Gluten Free', 450);
+    var testPizza2 = new Pizza("Cheese", [599, 799, 999]);
+    var testOrder = new Order('test order');
+    testOrder.pizzas.push(testPizza);
+    testOrder.pizzas.push(testPizza2);
+    console.log(testOrder);
+    expect(testOrder.pizzas[1]).to.equal(testPizza2);
+  });
+
+  it('will increase its grand total appropriately', function(){
+    var testPizza = new Pizza("Pepperoni", [599, 799, 999]);
+    testPizza.setSize('Medium');
+    testPizza.addExtra('Extra Cheese', 75);
+    testPizza.addExtra('Gluten Free', 450);
+    var testPizza2 = new Pizza("Cheese", [599, 799, 999]);
+    testPizza2.setSize('Large');
+    var testOrder = new Order('test order');
+    testOrder.pizzas.push(testPizza);
+    testOrder.pizzas.push(testPizza2);
+    testOrder.totalUp();
+    expect(testOrder.grandTotal).to.equal(2323);
+  });
 });
