@@ -6,7 +6,7 @@
 
 ## Description
 
-This pizza ordering website allows the user to pick from a list of types of pizza then add toppings to their choice. It displays a running total and a total with tax then confirms the order with the user on completion.
+This pizza ordering website allows the user to pick from a list of types of pizza then add toppings to their choice. The user can also add additional pizzas consecutively. It displays a running total and a total with tax then confirms the order with the user on completion.
 
 ## Known Bugs
 

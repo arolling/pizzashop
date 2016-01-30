@@ -68,10 +68,8 @@ $(document).ready(function() {
     event.preventDefault();
     var pick = $('select#pizzaType').val();
     userPizza = new Pizza(pick, [500, 1000, 1500]);
-    console.log(userPizza);
     var size = $('select#pizzaSize').val();
     userPizza.setSize(size);
-    console.log(userPizza);
     userOrder.pizzas.push(userPizza);
     userOrder.totalUp();
     $('#pizzaList' + counter).html('<li class="list-group-item">' + userPizza.describePizza() + '</li>');
@@ -86,9 +84,7 @@ $(document).ready(function() {
     $('input:checkbox:checked').each(function(){
       var extra = $(this).attr('id');
       var extraCost = parseInt($(this).val());
-      console.log(extra, extraCost);
       userPizza.addExtra(extra, extraCost);
-      console.log(userPizza);
       userOrder.totalUp();
       $('#pizzaList' + counter).html('<li class="list-group-item">' + userPizza.describePizza() + '</li>');
       $('#priceList' + counter).html('<li class="list-group-item">' + userPizza.currentCost() + '</li>');
@@ -98,7 +94,6 @@ $(document).ready(function() {
   }); //choose extras
 
   $('#addPizza').click(function() {
-    // Add span to contain next pizza?
     $('#pizzaList' + counter).after('<span id="pizzaList' + (counter+1) + '"></span>');
     $('#priceList' + counter).after('<span id="priceList' + (counter+1) + '"></span>');
     counter++;
@@ -114,6 +109,6 @@ $(document).ready(function() {
 
   $('#confirmationModal').on('hidden.bs.modal', function () {
     location.reload();
-  });
+  }); // reloads page when modal is dismissed (thanks stackoverflow!)
 
 }); //END DOCUMENT READY FUNCTION

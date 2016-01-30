@@ -3,16 +3,16 @@
   b) Base price per size?? - an array of 3 prices per pizza type?
   c) Total cost including modifications
   d) List of added extras
-2) Create an order object that contains: --> once 1) is complete and tested!
+**2) Create an order object that contains: --> once 1) is complete and tested!
   a) The list of pizzas objects for this order
-  b) Potential order modifications (extra toppings) and their prices?
+  xxxb) Potential order modifications (extra toppings) and their prices?
   c) Total price of order
 **3) Prototype method selects the cost of the size of pizza and
   b) second prototype method adds the cost of toppings to create total cost
 **4) Prototype method adds cost of selected pizzas for total order price??
 **5) Q: Create set of standard pizza objects at beginning of jQuery or initiate them as customer selects them from a drop down menu????
 6) Further exploration priorities:
-  a) User can order more than one pizza (see 2 above)
+  **a) User can order more than one pizza (see 2 above)
   b) Add ability to change order after pizza object constructed (new methods)
   **c) Checkboxes for add-ons
   c) Delivery option with additional cost

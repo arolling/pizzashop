@@ -23,7 +23,7 @@
 
       <div class="row">
         <!-- Pizza order selection goes here -->
-        <div class="col-md-8 displaybox">
+        <div class="col-md-8">
           <h3>Place Order:</h3>
           <form class="form-inline" id="pizzaPicker">
             <div class="form-group">
@@ -70,7 +70,7 @@
 
 
         <!-- Pizza order display goes here -->
-        <div class="col-md-4 displaybox">
+        <div class="col-md-4">
           <h3>Current Order:</h3>
           <div class="row">
             <div class="col-sm-9">
@@ -90,10 +90,12 @@
           <div id="orderTotal">
             <h4>With 7.5% tax, your order total is:</h4>
             <p class="bg-success" id="totalWithTax"></p>
-            <button type="button" class="btn btn-primary btn-lg" id="confirmation" data-toggle="modal" data-target="#confirmationModal">Confirm Order</button>
+            <button type="button" class="btn btn-default btn-lg" id="confirmation" data-toggle="modal" data-target="#confirmationModal">Confirm Order</button>
           </div>
         </div><!-- End right column -->
       </div><!-- End main row of columns -->
+
+      <!-- START MODAL -->
       <div class="modal fade" tabindex="-1" role="dialog" id="confirmationModal">
         <div class="modal-dialog">
           <div class="modal-content">
