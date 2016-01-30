@@ -31,7 +31,7 @@ describe ('Pizza', function (){
     testPizza.setSize('Medium');
     testPizza.addExtra('Extra Cheese', 75);
     testPizza.addExtra('Gluten Free', 450);
-    expect(testPizza.describePizza()).to.equal('Medium Pepperoni Pizza with Extra Cheese and Gluten Free');
+    expect(testPizza.describePizza()).to.equal('Gluten Free Medium Pepperoni Pizza with Extra Cheese');
   });
 
   it('will return a friendly description of the current pizza cost', function() {

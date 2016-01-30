@@ -11,10 +11,9 @@ This pizza ordering website allows the user to pick from a list of types of pizz
 ## Known Bugs
 
 * Does not allow the user to remove extras after adding them; clears extras if a new pizza is selected
-* User can add the same topping more than once
-* Does not show the individual prices for each extra
+* User can add the same extra topping more than once
+* If too many options are selected, pizza decription overflows containing box
 * All pizzas are the same price
-* Grammar when "Gluten Free" is chosen can be wonky
 
 ## Support and contact details
 

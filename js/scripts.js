@@ -29,7 +29,7 @@ Pizza.prototype.describePizza = function(){
   var pizzaString = this.pieSize + ' ' + this.kind + ' Pizza ';
   var and = 'with '; // little crazy, but...
   this.extras.forEach(function(extra) {
-    if (extra === "Gluten Free") {
+    if (extra === "Gluten Free" || extra === "Deep Dish" || extra === "Thin Crust") {
       pizzaString = extra + ' ' + pizzaString;
     } else {
       pizzaString += and;
@@ -71,7 +71,7 @@ $(document).ready(function() {
   $('form#pizzaPicker').submit(function(event) {
     event.preventDefault();
     var pick = $('select#pizzaType').val();
-    userPizza = new Pizza(pick, [500, 1000, 1500]);
+    userPizza = new Pizza(pick, [599, 1099, 1399]);
     var size = $('select#pizzaSize').val();
     userPizza.setSize(size);
     userOrder.pizzas.push(userPizza);
