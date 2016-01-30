@@ -26,14 +26,18 @@ Pizza.prototype.addExtra = function(extra, cost){
 }
 
 Pizza.prototype.describePizza = function(){
-  var extraString = '';
+  var pizzaString = this.pieSize + ' ' + this.kind + ' Pizza ';
   var and = 'with '; // little crazy, but...
   this.extras.forEach(function(extra) {
-    extraString += and;
-    extraString += extra;
-    and = ' and ';
+    if (extra === "Gluten Free") {
+      pizzaString = extra + ' ' + pizzaString;
+    } else {
+      pizzaString += and;
+      pizzaString += extra;
+      and = ' and ';
+    }
   });
-  return this.pieSize + ' ' + this.kind + ' Pizza ' + extraString;
+  return pizzaString
 }
 
 Pizza.prototype.currentCost = function() {
